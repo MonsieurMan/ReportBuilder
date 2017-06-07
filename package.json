@@ -1,5 +1,5 @@
 {
-  "name": "reportBuilder",
+  "name": "reportbuilder",
   "version": "1.0.0",
   "description": "Small tool to build a report",
   "main": "./lib/index.ts",
@@ -7,6 +7,10 @@
   "scripts": {
     "build:ts": "./node_modules/.bin/ts-node ./src/index.ts",
     "start": "npm run build:ts"
+  },
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/MonsieurMan/ReportBuilder"
   },
   "keywords": [
     "report",
