@@ -1,0 +1,24 @@
+{
+  "name": "reportBuilder",
+  "version": "1.0.0",
+  "description": "Small tool to build a report",
+  "main": "./lib/index.ts",
+  "types": "./lib/index.ts",
+  "scripts": {
+    "build:ts": "./node_modules/.bin/ts-node ./src/index.ts",
+    "start": "npm run build:ts"
+  },
+  "keywords": [
+    "report",
+    "internship",
+	"prince"
+  ],
+  "devDependencies": {
+	  "ts-node": "3.0.6",
+	  "ts-loader": "2.1.0",
+	  "typescript": "2.3.4",
+	  "@types/node": "7.0.28"
+  },
+  "author": "Ange Picard",
+  "license": "ISC"
+}
