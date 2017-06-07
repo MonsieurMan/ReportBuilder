@@ -73,11 +73,6 @@
 /* Reset chapter and figure counters on the body */
 body {
   counter-reset: h1 h2 h3 h4 figurenum;
-  /*counter-reset: h2;
-  counter-reset: h3; 
-  counter-reset: h4;
-  counter-reset: figurenum;*/
-
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   line-height: 1.5;
   font-size: 11pt;
