@@ -65,7 +65,7 @@ div.frontcover {
 
 /* Reset chapter and figure counters on the body */
 body {
-  counter-reset: chapternum figurenum;
+  counter-reset: h1 figurenum;
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   line-height: 1.5;
   font-size: 11pt;
@@ -83,14 +83,32 @@ h1 {
 
 /* Increment chapter counter */
 h1.chapter:before {
-  counter-increment: chapternum;
-  content: counter(chapternum) ". ";
+  counter-increment: h1;
+  counter-reset: h2 h3 h4;
+  content: counter(h1) ". ";
+}
+
+h2.chapter:before {
+	counter-increment: h2;
+	counter-reset: h3 h4;
+  content: counter(h1) "." counter(h2) ". ";
+}
+
+h3.chapter:before {
+	counter-increment: h3;
+	counter-reset: h4;
+	content: counter(h1) "." counter(h2) "." counter(h3) ". ";
+}
+
+h4.chapter:before {
+	counter-increment: h4;
+	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
 }
 
 /* Increment and display figure counter */
 figcaption:before {
   counter-increment: figurenum;
-  content: counter(chapternum) "-" counter(figurenum) ". ";
+  content: counter(h1) "-" counter(figurenum) ". ";
 }
 
 /* Footnotes related stuff */

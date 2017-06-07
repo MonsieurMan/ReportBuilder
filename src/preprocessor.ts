@@ -42,7 +42,7 @@ export class Preprocessor {
 			let doc = window.document;
 
 			// Add chapter class to all h1
-			let h1 = doc.getElementsByTagName('h1');
+			let h1 = doc.querySelectorAll('h1,h2,h3,h4');
 
 			for(let i = 0; i < h1.length; i++) {
 				h1[i].classList.add('chapter');
