@@ -1,9 +1,23 @@
+@import "style.css";
+
 @page {
 	size: A4;
 	margin: 70pt 60pt 70pt;
 }
 
 @page:first {
+	@bottom-right {
+    content: normal;
+    margin: 0;
+  }
+
+	@bottom-left {
+		content: normal;
+    	margin: 0;
+  	}
+}
+
+@page guardpage {
 	@bottom-right {
     content: normal;
     margin: 0;
@@ -54,13 +68,6 @@
     content: counter(page);
     font-size: 9pt;
   }
-}
-
-div.frontcover {
-	page: cover;
-	content: url("images/cover.jpg");
-	width: 100%;
-	height: 100%;
 }
 
 /* Reset chapter and figure counters on the body */
@@ -150,5 +157,5 @@ figcaption:before {
 
 /* Table of content pages number and trailing dots */
 ul.toc a::after {
-  content: leader('.') target-counter(attr(href), page);
+  content: leader(".") target-counter(attr(href), page);
 }

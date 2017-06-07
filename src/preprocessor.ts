@@ -47,9 +47,65 @@ export class Preprocessor {
 			for(let i = 0; i < h1.length; i++) {
 				h1[i].classList.add('chapter');
 			}
+			this.generateToc(doc);
 
 			this.createFileToOut(doc.documentElement.innerHTML);
 		});
+	}
+
+	private generateToc(doc: Document): void {
+		let toc = doc.getElementsByClassName('toc')[0];
+		let h1=0;
+		let h2=0;
+		let h3=0;
+		let h4=0;
+		
+		let element = <Element>doc.getElementsByTagName('h1')[0];
+		//Iterate on all element beginning by the first h1
+		while(element.nextElementSibling) {
+			switch(element.tagName) {
+				case "H1" :{
+					h1++;
+					h2 = h3 = h4 = 0;
+					let id = h1.toString();
+					this.addIdAndCreateLi(id, element, toc, doc, 0);
+					break;
+				}
+				case "H2" :{
+					h2++;
+					h3 = h4 = 0;
+					let id = h1.toString() + "." + h2.toString();
+					this.addIdAndCreateLi(id, element, toc, doc, 1);
+					break;
+				}
+				case "H3" :{
+					h3++;
+					h4 = 0;
+					let id = h1.toString() + "." + h2.toString() + "." + h3.toString();
+					this.addIdAndCreateLi(id, element, toc, doc, 2);
+					break;
+				}
+				case "H4" :{
+					h4++;
+					let id = h1.toString() + "." + h2.toString() + "." + h3.toString() + "." + h4.toString();
+					this.addIdAndCreateLi(id, element, toc, doc, 3);
+					break;
+				}
+			}
+			element = element.nextElementSibling;
+		}
+	}
+
+	private addIdAndCreateLi(id: string, element: Element, toc: Element, doc: Document, tab: number) {
+		element.id = id;
+		let li = doc.createElement('LI');
+		let a = doc.createElement('A');
+		a.setAttribute("href", "#" + id);
+		a.style.paddingLeft = (tab * 20) + 'px';
+		let text = doc.createTextNode(id + ' ' + element.textContent);
+		a.appendChild(text);
+		li.appendChild(a);
+		toc.appendChild(li);
 	}
 
 	/**
