@@ -1,25 +1,156 @@
-ul {
-	list-style-type: none;
+@import "report.css";
+
+@page {
+	size: A4;
+	margin: 70pt 60pt 70pt;
 }
 
-a {
-	color: black;
-	text-decoration: none;
+@page:first {
+	@bottom-right {
+    content: normal;
+    margin: 0;
+  }
+
+	@bottom-left {
+		content: normal;
+    	margin: 0;
+  	}
 }
 
-p {
-	text-align: justify;
-	text-indent: 40px;
+@page guardpage {
+	@bottom-right {
+    content: normal;
+    margin: 0;
+  }
+
+	@bottom-left {
+		content: normal;
+    	margin: 0;
+  	}
 }
 
-div.frontcover {
-	page: cover;
-	width: 100%;
-	height: 100%;
+@page:right{ 
+  @bottom-left {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "Our Cats";
+    font-size: 9pt;
+    color: #333;
+  }
+
+  @bottom-right { 
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: counter(page);
+    font-size: 9pt;
+  }
+
+  @top-right {
+    content:  string(doctitle);
+    margin: 30pt 0 10pt 0;
+    font-size: 9pt;
+    color: #333;
+  }
 }
 
-div.guardpage {
-	page: guardpage;
-	width: 100%;
-	height: 100%;
+@page:left {
+  @bottom-right {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "Our Cats";
+    font-size: 9pt;
+    color: #333;
+  }
+
+  @bottom-left { 
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: counter(page);
+    font-size: 9pt;
+  }
+}
+
+/* Reset chapter and figure counters on the body */
+body {
+  counter-reset: h1 h2 h3 h4 figurenum;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  line-height: 1.5;
+  font-size: 11pt;
+}
+
+/* Get the title of the current chapter, which will be the content of the h1.
+Reset figure counter because figures start from 1 in each chapter. */
+h1 {
+  string-set: doctitle content();
+  page-break-before: always;
+  counter-reset: figurenum h2 h3 h4 footnote;
+  line-height: 1.3;
+}
+
+/* Increment chapter counter */
+h1.chapter::before {
+  counter-increment: h1;
+  content: counter(h1) ". ";
+}
+
+h2 {
+	counter-reset: h3 h4;
+}
+
+h2.chapter::before {
+	counter-increment: h2;
+  content: counter(h1) "." counter(h2) ". ";
+}
+
+h3 {
+	counter-reset: h4;
+}
+
+h3.chapter::before {
+	counter-increment: h3;
+	content: counter(h1) "." counter(h2) "." counter(h3) ". ";
+}
+
+h4.chapter::before {
+	counter-increment: h4;
+	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+
+/* Increment and display figure counter */
+figcaption:before {
+  counter-increment: figurenum;
+  content: counter(h1) "-" counter(figurenum) ". ";
+}
+
+/* Footnotes related stuff */
+.fn {
+  float: footnote;
+}
+
+.fn {
+  counter-increment: footnote;
+}
+
+.fn::footnote-call {
+  content: counter(footnote);
+  font-size: 9pt;
+  vertical-align: super;
+  line-height: none;
+}
+
+.fn::footnote-marker {
+  font-weight: bold;
+}
+
+@page {
+  @footnote {
+    border-top: 0.6pt solid black;
+    padding-top: 8pt;
+  }
+}
+/* End of footnotes stuff */
+
+/* Table of content pages number and trailing dots */
+ul.toc a::after {
+  content: leader(".") target-counter(attr(href), page);
 }
