@@ -41,7 +41,12 @@ export class Preprocessor {
 			let window = new JSDOM(html.toString()).window;
 			let doc = window.document;
 
-			doc.getElementsByTagName('h1')[0].classList.add('chapter');
+			// Add chapter class to all h1
+			let h1 = doc.getElementsByTagName('h1');
+
+			for(let i = 0; i < h1.length; i++) {
+				h1[i].classList.add('chapter');
+			}
 
 			this.createFileToOut(doc.documentElement.innerHTML);
 		});
