@@ -11,6 +11,22 @@ p {
 	text-align: justify;
 	text-indent: 40px;
 }
+figure{
+
+}
+
+figure name{
+	display: inline;
+	font-weight: bold;
+}
+figure name:after{
+	content: " -";
+	font-weight: normal;
+}
+figure figcaption{
+	display: inline;
+	font-style: italic;
+}
 
 div.frontcover {
 	page: cover;

@@ -67,27 +67,27 @@ export class Preprocessor {
 				case "H1" :{
 					h1++;
 					h2 = h3 = h4 = 0;
-					let id = h1.toString();
+					let id = h1.toString() + ".";
 					this.addIdAndCreateLi(id, element, toc, doc, 0);
 					break;
 				}
 				case "H2" :{
 					h2++;
 					h3 = h4 = 0;
-					let id = h1.toString() + "." + h2.toString();
+					let id = h1.toString() + "." + h2.toString() + ".";
 					this.addIdAndCreateLi(id, element, toc, doc, 1);
 					break;
 				}
 				case "H3" :{
 					h3++;
 					h4 = 0;
-					let id = h1.toString() + "." + h2.toString() + "." + h3.toString();
+					let id = h1.toString() + "." + h2.toString() + "." + h3.toString() + ".";
 					this.addIdAndCreateLi(id, element, toc, doc, 2);
 					break;
 				}
 				case "H4" :{
 					h4++;
-					let id = h1.toString() + "." + h2.toString() + "." + h3.toString() + "." + h4.toString();
+					let id = h1.toString() + "." + h2.toString() + "." + h3.toString() + "." + h4.toString() + ".";
 					this.addIdAndCreateLi(id, element, toc, doc, 3);
 					break;
 				}

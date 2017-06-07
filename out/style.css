@@ -73,7 +73,7 @@
 /* Reset chapter and figure counters on the body */
 body {
   counter-reset: h1 h2 h3 h4 figurenum;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-family: "Open Sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   line-height: 1.5;
   font-size: 11pt;
 }
@@ -117,7 +117,7 @@ h4.chapter::before {
 }
 
 /* Increment and display figure counter */
-figcaption:before {
+figure name:before {
   counter-increment: figurenum;
   content: counter(h1) "-" counter(figurenum) ". ";
 }
