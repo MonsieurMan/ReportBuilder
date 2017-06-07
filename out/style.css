@@ -44,13 +44,6 @@
     content: counter(page);
     font-size: 9pt;
   }
-
-  @top-right {
-    content:  string(doctitle);
-    margin: 30pt 0 10pt 0;
-    font-size: 9pt;
-    color: #333;
-  }
 }
 
 @page:left {
@@ -119,7 +112,7 @@ h4.chapter::before {
 /* Increment and display figure counter */
 figure name:before {
   counter-increment: figurenum;
-  content: counter(h1) "-" counter(figurenum) ". ";
+  content: counter(figurenum) ". ";
 }
 
 /* Footnotes related stuff */

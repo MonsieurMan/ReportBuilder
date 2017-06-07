@@ -12,7 +12,12 @@ p {
 	text-indent: 40px;
 }
 figure{
-
+	width: 100%;
+	text-align: center;
+}
+figure img{
+	margin: auto;
+	display: block;
 }
 
 figure name{
@@ -38,4 +43,15 @@ div.guardpage {
 	page: guardpage;
 	width: 100%;
 	height: 100%;
+}
+
+.tof li:nth-child(odd){
+	background-color: #AAAAAA;
+}
+
+.tof li:nth-child(even){
+	background-color: #888888;
+}
+.tof li a{
+	color: white;
 }

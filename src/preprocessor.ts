@@ -48,7 +48,7 @@ export class Preprocessor {
 				h1[i].classList.add('chapter');
 			}
 			this.generateToc(doc);
-
+			this.generateTof(doc);
 			this.createFileToOut(doc.documentElement.innerHTML);
 		});
 	}
@@ -107,6 +107,17 @@ export class Preprocessor {
 		li.appendChild(a);
 		toc.appendChild(li);
 	}
+	private addIdAndCreateLiFigure(id: string, element: Element, toc: Element, doc: Document, tab: number) {
+		element.id = id;
+		let li = doc.createElement('LI');
+		let a = doc.createElement('A');
+		a.setAttribute("href", "#" + id);
+		a.style.paddingLeft = (tab * 20) + 'px';
+		let text = doc.createTextNode(id  + '. ' + element.getElementsByTagName('name')[0].textContent);
+		a.appendChild(text);
+		li.appendChild(a);
+		toc.appendChild(li);
+	}
 
 	/**
 	 * Create the html file in the out directory
@@ -124,4 +135,13 @@ export class Preprocessor {
 		});
 	}
 
+	private generateTof(document: Document) {
+
+		let tof = document.getElementsByClassName('tof')[0];
+		let figures = document.getElementsByTagName('figure');
+		for(let i=0 ; i < figures.length ; i++ )
+		{
+			this.addIdAndCreateLiFigure((i+1).toString(), figures[i], tof, document, 0);
+		}
+	}
 }
