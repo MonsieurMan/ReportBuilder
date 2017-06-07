@@ -65,7 +65,12 @@ div.frontcover {
 
 /* Reset chapter and figure counters on the body */
 body {
-  counter-reset: h1 figurenum;
+  counter-reset: h1 h2 h3 h4 figurenum;
+  /*counter-reset: h2;
+  counter-reset: h3; 
+  counter-reset: h4;
+  counter-reset: figurenum;*/
+
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
   line-height: 1.5;
   font-size: 11pt;
@@ -76,31 +81,35 @@ Reset figure counter because figures start from 1 in each chapter. */
 h1 {
   string-set: doctitle content();
   page-break-before: always;
-  counter-reset: figurenum;
-  counter-reset: footnote;
+  counter-reset: figurenum h2 h3 h4 footnote;
   line-height: 1.3;
 }
 
 /* Increment chapter counter */
-h1.chapter:before {
+h1.chapter::before {
   counter-increment: h1;
-  counter-reset: h2 h3 h4;
   content: counter(h1) ". ";
 }
 
-h2.chapter:before {
-	counter-increment: h2;
+h2 {
 	counter-reset: h3 h4;
+}
+
+h2.chapter::before {
+	counter-increment: h2;
   content: counter(h1) "." counter(h2) ". ";
 }
 
-h3.chapter:before {
-	counter-increment: h3;
+h3 {
 	counter-reset: h4;
+}
+
+h3.chapter::before {
+	counter-increment: h3;
 	content: counter(h1) "." counter(h2) "." counter(h3) ". ";
 }
 
-h4.chapter:before {
+h4.chapter::before {
 	counter-increment: h4;
 	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
 }
