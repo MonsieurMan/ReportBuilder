@@ -6,7 +6,8 @@
   "types": "./lib/index.ts",
   "scripts": {
     "build:ts": "./node_modules/.bin/ts-node ./src/index.ts",
-    "start": "npm run build:ts"
+	"prince": "prince --fileroot=./out -s report.css report.html report.pdf",
+    "start": "npm run build:ts && prince"
   },
   "repository": {
 	  "type": "git",
