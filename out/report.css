@@ -11,24 +11,28 @@ p {
 	text-align: justify;
 	text-indent: 40px;
 }
-figure{
+
+figure {
 	width: 100%;
 	text-align: center;
 }
-figure img{
+
+figure img {
 	margin: auto;
 	display: block;
 }
 
-figure name{
+figure name {
 	display: inline;
 	font-weight: bold;
 }
-figure name:after{
+
+figure name:after {
 	content: " -";
 	font-weight: normal;
 }
-figure figcaption{
+
+figure figcaption {
 	display: inline;
 	font-style: italic;
 }
@@ -45,13 +49,14 @@ div.guardpage {
 	height: 100%;
 }
 
-.tof li:nth-child(odd){
+.tof li:nth-child(odd) {
 	background-color: #AAAAAA;
 }
 
-.tof li:nth-child(even){
+.tof li:nth-child(even) {
 	background-color: #888888;
 }
-.tof li a{
+
+.tof li a {
 	color: white;
 }

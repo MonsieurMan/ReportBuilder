@@ -1,17 +1,18 @@
 {
   "name": "reportbuilder",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Small tool to build a report",
   "main": "./lib/index.ts",
   "types": "./lib/index.ts",
   "scripts": {
-    "build:ts": "./node_modules/.bin/ts-node ./src/index.ts",
-	"prince": "prince --style=out/style.css out/report.html --output=out/report.pdf",
-    "start": "npm run build:ts && npm run prince"
+    "gen-toc-tof": "ts-node ./src/index.ts ./out/report.html ./out/report.html",
+    "parse:md": "marked ./files/report.md -o ./out/report.html",
+    "parse:pdf": "weasyprint out/report.html out/report.pdf -s out/style.css",
+    "start": "npm run parse:md && npm run gen-toc-tof && npm run parse:pdf"
   },
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/MonsieurMan/ReportBuilder"
+    "type": "git",
+    "url": "https://github.com/MonsieurMan/ReportBuilder"
   },
   "keywords": [
     "report",
@@ -22,8 +23,10 @@
     "@types/jsdom": "^11.0.0",
     "@types/node": "7.0.28",
     "jsdom": "^11.0.0",
+    "marked": "^0.4.0",
     "ts-loader": "2.1.0",
     "ts-node": "3.0.6",
+    "tslint": "^5.11.0",
     "typescript": "2.3.4"
   },
   "author": "Ange Picard",

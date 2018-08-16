@@ -4,7 +4,7 @@
 	size: A4;
 	margin: 70pt 60pt 70pt;
 }
-
+/* First page */
 @page:first {
 	@bottom-right {
     content: normal;
@@ -16,7 +16,7 @@
     	margin: 0;
   	}
 }
-
+/* GuardPage */
 @page guardpage {
 	@bottom-right {
     content: normal;
@@ -29,11 +29,12 @@
   	}
 }
 
+/* Bottom right page content */
 @page:right{ 
   @bottom-left {
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
-    content: "Our Cats";
+    content: "TBFC, UB, PICARD Ange 2017 - 2018";
     font-size: 9pt;
     color: #333;
   }
@@ -46,11 +47,12 @@
   }
 }
 
+/* Bottom left page content */
 @page:left {
   @bottom-right {
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
-    content: "Our Cats";
+    content: "TBFC, UB, PICARD Ange 2017 - 2018";
     font-size: 9pt;
     color: #333;
   }
@@ -80,23 +82,23 @@ h1 {
   line-height: 1.3;
 }
 
+h2 {
+  counter-reset: h3 h4;
+}
+
+h3 {
+  counter-reset: h4;
+}
+
 /* Increment chapter counter */
 h1.chapter::before {
   counter-increment: h1;
   content: counter(h1) ". ";
 }
 
-h2 {
-	counter-reset: h3 h4;
-}
-
 h2.chapter::before {
 	counter-increment: h2;
   content: counter(h1) "." counter(h2) ". ";
-}
-
-h3 {
-	counter-reset: h4;
 }
 
 h3.chapter::before {
@@ -110,12 +112,13 @@ h4.chapter::before {
 }
 
 /* Increment and display figure counter */
-figure name:before {
+figure figcaption:before {
   counter-increment: figurenum;
-  content: counter(figurenum) ". ";
+  /* TODO: Should this be in preprocessor ? */
+  content: counter(figurenum) " - ";
 }
 
-/* Footnotes related stuff */
+/* Footnotes related stuff FIXME: */
 .fn {
   float: footnote;
 }
@@ -145,5 +148,6 @@ figure name:before {
 
 /* Table of content pages number and trailing dots */
 ul.toc a::after {
-  content: leader(".") target-counter(attr(href), page);
+  /* content: leader(".") target-counter(attr(href), page); */
+  content: counter(page);
 }
