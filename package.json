@@ -27,6 +27,7 @@
     "@types/node": "7.0.28",
     "fs-extra": "^7.0.0",
     "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.1",
     "jsdom": "^11.0.0",
     "marked": "^0.4.0",
     "ts-loader": "2.1.0",
