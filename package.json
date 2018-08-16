@@ -20,14 +20,19 @@
     "prince"
   ],
   "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/gulp": "^4.0.5",
     "@types/jsdom": "^11.0.0",
+    "@types/marked": "^0.4.0",
     "@types/node": "7.0.28",
+    "fs-extra": "^7.0.0",
+    "gulp": "^4.0.0",
     "jsdom": "^11.0.0",
     "marked": "^0.4.0",
     "ts-loader": "2.1.0",
-    "ts-node": "3.0.6",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "2.3.4"
+    "typescript": "^3.0.1"
   },
   "author": "Ange Picard",
   "license": "ISC"

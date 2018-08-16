@@ -1,4 +1,5 @@
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
+import * as path from 'path';
 import { JSDOM } from 'jsdom';
 import { NoTableOfFigureError, NoTableOfContentError } from './errors';
 
@@ -18,12 +19,7 @@ export class Preprocessor {
 	 * @throws {Error} if the file is not found
 	 */
   constructor(private filePath: string, private outputPath: string) {
-    fs.realpath(filePath, (err, realPath) => {
-      if (err) { throw err; }
-      fs.exists(realPath, (exists) => {
-        if (!exists) { throw new Error('File not found : : ' + realPath); }
-      });
-    });
+    fs.accessSync(path.resolve(filePath));
   }
 
   /**
@@ -31,18 +27,16 @@ export class Preprocessor {
    *
    * @memberof Preprocessor    
    */
-  public execute(): void {
-    fs.readFile(this.filePath, 'utf8', (err, html) => {
-      if (err) { throw err; }
+  public async execute() {
+    const html = await fs.readFile(this.filePath, 'utf8');
 
-      const window = new JSDOM(html.toString()).window;
-      const doc = window.document;
+    const window = new JSDOM(html.toString()).window;
+    const doc = window.document;
 
-      this.addChapterClassToHeaders(doc);
-      this.generateToc(doc);
-      this.generateTof(doc);
-      this.createFileToOut(doc.documentElement.innerHTML);
-    });
+    this.addChapterClassToHeaders(doc);
+    this.generateToc(doc);
+    this.generateTof(doc);
+    await this.createFileToOut(doc.documentElement.innerHTML);
   }
 
   private addChapterClassToHeaders(doc: Document) {
@@ -148,14 +142,12 @@ export class Preprocessor {
 	  *
 	  * @memberof Preprocessor
 	  */
-  private createFileToOut(content: string): void {
-    fs.realpath(this.outputPath, (_, realPath) => {
-      fs.writeFile(realPath, content, (err) => {
-        if (err) {
-          throw err;
-        }
-      });
-    });
+  private async createFileToOut(content: string) {
+    try {
+      await fs.writeFile(path.resolve(this.outputPath), content, { flag: 'w' });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   private generateTof(document: Document) {

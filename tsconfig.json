@@ -4,6 +4,10 @@
 		"module": "commonjs",
 		"declaration": true,
 		"outDir": "./lib",
+		"lib": [
+			"es2015",
+			"dom"
+		],
 		"rootDir": "./src",
 		"typeRoots": ["node_modules/@types"]
 	}
