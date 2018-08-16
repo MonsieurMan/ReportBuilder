@@ -1,9 +1,11 @@
 import * as marked from 'marked';
-import { series, parallel, src, dest } from 'gulp';
-import { readFile, writeFile } from 'fs-extra';
+import { series, parallel, src, dest, watch } from 'gulp';
+import * as through from "through2";
 import * as scss from 'gulp-sass';
+import * as rename from 'gulp-rename';
+import * as cache from 'gulp-cached';
 import { exec } from 'child_process';
-import { Preprocessor } from './src/preprocessor';
+import { addTOCandTOF } from './src/preprocessor';
 
 /** TODO:
  * md -> html marked
@@ -13,40 +15,53 @@ import { Preprocessor } from './src/preprocessor';
  * html -> pdf weasyprint
  */
 
-export async function parseMarkdown() {
-    const markdown = (await readFile('files/report.md')).toString();
-    const html = marked(markdown);
-    await writeFile('out/report.html', html);
-}
+const parseMarkdown = () => through.obj((file, _, cb) => {
+    const html = marked(file.contents.toString());
+    file.contents = Buffer.from(html);
+    cb(null, file);
+});
 
-export async function processSCSS() {
+const preprocessHTML = () => through.obj(async (file, _, cb) => {
+    try {
+        const newFile = await addTOCandTOF(file.contents.toString());
+        file.contents = Buffer.from(newFile);
+        cb(null, file)
+    } catch (err) {
+        cb(err);
+    }
+});
+
+export function processSCSS() {
     return src('files/styles/**/*.scss')
+        .pipe(cache('assets'))
         .pipe(scss())
         .pipe(dest('./out'));
 }
 
-export async function copyAssets() {
+export function copyAssets() {
     return src('files/assets/**')
+        .pipe(cache('assets'))
         .pipe(dest('./out/assets'));
 }
 
-export async function preprocessHTML() {
-    const preprocessor = new Preprocessor('out/report.html', 'out/report.p.html');
-    await preprocessor.execute();
-}
+
 
 export async function HTMLToPDF() {
-    return exec('weasyprint out/report.p.html out/report.pdf -s out/style.css');
+    return exec('weasyprint out/report.html out/report.pdf -s out/style.css');
 }
 
-export default series(
-    parallel(
-        series(
-            parseMarkdown,
-            preprocessHTML
-        ),
-        processSCSS,
-        copyAssets
-    ),
-    HTMLToPDF
-);
+function markdown() {
+    return src('files/report.md')
+        .pipe(cache('markdown'))
+        .pipe(parseMarkdown())
+        .pipe(preprocessHTML())
+        .pipe(rename('report.html'))
+        .pipe(dest('out'))
+}
+
+export function watchBuild() {
+    watch('files/**', { ignoreInitial: false }, defaultTask);
+}
+
+const defaultTask = series(parallel(markdown, processSCSS, copyAssets), HTMLToPDF);
+export default defaultTask;
