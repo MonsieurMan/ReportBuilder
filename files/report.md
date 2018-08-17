@@ -1,27 +1,53 @@
 <div class="frontcover"></diV>
 <div class="guardpage"></diV>
 
-# Table des matières
+# This is the header of the report !
+
+# Table of content
 
 <ul class="toc"></ul>
 
-# Table des figures
+# Table of figures
 <ul class="tof"></ul>
 
-## This is just a second title you can use here !
+# Text objects
+## Paragraphs
+Some paragraph text, 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ad blanditiis.  
+Wrapped line but not indented.
 
-## And this is yet another
-So what we will do  
-a s d
-> Is that there is quotations  
+Wrapped and indented second paragraph.
+## Text decoration
+- **Bold text**  
+- *Italic text*  
+- ~~cut-through text~~  
+- 'singles quotes'  
+- "double quotes"  
+- -- double dash  
 
+## Quotation
+> This is a quotation 
+## Image
 ![Angular](./assets/angular-icon.png)
-
+## Code block
 ```ts
+// And some code block !
 const str = 'But also code';
 ```
-- And lists !
+
+## List
+
+- And a lists !
   - So lists !
   - Yeah lists :3
+- Lists are cool !
+  - Cooler than you are
+  - Cooler than meh :(
 
-**Is there** *anything* else ?
+## Table 
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
