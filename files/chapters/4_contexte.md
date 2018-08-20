@@ -19,8 +19,6 @@ Celle-ci prévoit pour une durée de **45 ans** que l'état possède 51% du capi
 
 Cette unification prend effet le **1er janvier 1938** pour former la nouvelle **SNCF**, celle-ci exploite alors un réseau de **42,500km** de voies dont **8%** électrifiées, le tout géré par **515,000** cheminots.
 
-*Source: Wikipédia*
-
 ### Transformation en EPIC
 
 C'est le 1er janvier 1983, à terme de la convention, que l'ensemble des actifs revient à l'état qui décide de faire de la SNCF un *Établissement Public à caractère Industriel et Commercial*.  
@@ -41,6 +39,8 @@ Suite à beaucoup de problèmes liées à la séparation des deux entités, le S
 - **SNCF**, l'EPIC de tête, la gouvernance du groupe.
 - **SNCF Réseau**, gestionnaire de l'infrastructure.
 - **SNCF Mobilité**, chargé de l'exploitation.
+
+![Trois EPIC](./assets/sncf-epic.png)
 
 ## La SNCF aujourd'hui
 

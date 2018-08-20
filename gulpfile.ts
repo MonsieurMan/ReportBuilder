@@ -10,7 +10,7 @@ import { preprocessHTML } from './src/gulp-plugins/preprocess-html';
 import { parseMarkdown } from './src/gulp-plugins/parse-markdown';
 
 export function markdownToHTML() {
-    return src(['files/report.md', 'files/chapters/**.md'])
+    return src(['files/report.md', 'files/chapters/**/*.md'])
         .pipe(concat('report.md'))
         .pipe(cache('markdown'))
         .pipe(parseMarkdown())

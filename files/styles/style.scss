@@ -82,22 +82,22 @@ h3 {
 
 h1.chapter::before {
   counter-increment: h1;
-  content: counter(h1) " - ";
+  // content: counter(h1) " - ";
 }
 
 h2.chapter::before {
   counter-increment: h2;
-  content: counter(h1) "." counter(h2) " - ";
+  // content: counter(h1) "." counter(h2) " - ";
 }
 
 h3.chapter::before {
   counter-increment: h3;
-  content: counter(h1) "." counter(h2) "." counter(h3) " - ";
+  // content: counter(h1) "." counter(h2) "." counter(h3) " - ";
 }
 
 h4.chapter::before {
   counter-increment: h4;
-  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " - ";
+  // content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " - ";
 }
 
 /* Increment and display figure counter */
@@ -106,6 +106,7 @@ figure figcaption:before {
   counter-increment: figurenum;
   /* TODO: Should this be in preprocessor ? */
   content: counter(figurenum) " - ";
+  font-weight: bold;
 }
 
 // #region footnotes related 

@@ -2,13 +2,14 @@
 $border: .25pt solid #099;
 $border-radius: 8px;
 
+$font-family: "Open sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $font-color: black;
 $footer-font-color: grey;
 $link-font-color: blue;
 
 $paragraph-indent: 16px;
 $list-padding: 32px;
-$font-family: "Open sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$list-odd-background-color: #f5f5f5;
 
 
 body {
@@ -16,9 +17,15 @@ body {
   line-height: 1.5;
   font-size: 11pt;
 }
+
+blockquote {
+  font-style: italic;
+}
+
 ul {
   padding-left: $list-padding;
 }
+
 @page {
   size: A4;
   margin: 70pt 60pt;
@@ -40,7 +47,7 @@ h1 {
   break-before: always;
 }
 a {
-  color: blue;
+  color: $link-font-color;
   text-decoration: none;
 }
 
@@ -64,7 +71,7 @@ figure img {
 
 figure figcaption {
   display: inline;
-  font-style: italic;
+  font-size: 9pt;
 }
 
 div.frontcover {
@@ -85,11 +92,11 @@ div.guardpage {
   padding-left: 0;
   border-radius: $border-radius;
   a {
-    color: black;
+    color: $font-color;
   }
   li {
     &:nth-child(odd) {
-      background-color: #f5f5f5;
+      background-color: $list-odd-background-color;
     }
     &:nth-child(even) {
       // background-color: #c2c2c2;
