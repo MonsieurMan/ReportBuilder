@@ -1,11 +1,7 @@
+// This file is for CSS Print specific attributes only
 @import 'report.scss';
 // see https://highlightjs.org/static/demo/ for a list of available styles
 @import '../../node_modules/highlight.js/styles/vs.css';
-
-@page {
-  size: A4;
-  margin: 70pt 60pt;
-}
 
 // #region firstPages
 @mixin resetBottom {
@@ -32,15 +28,7 @@
 }
 
 // #endregion firstPages
-@mixin bottomStyle {
-  margin-top: 10pt;
-  margin-bottom: 30pt;
-  border-top: .25pt solid #099;
-  font-family: "Open sans";
-  font-size: 8pt;
-  font-style: normal;
-  color: #555;
-}
+
 
 @mixin reportContentBottom {
   @include bottomStyle; // Hack for having the border span across the whole page
@@ -94,22 +82,22 @@ h3 {
 
 h1.chapter::before {
   counter-increment: h1;
-  content: counter(h1) ". ";
+  content: counter(h1) " - ";
 }
 
 h2.chapter::before {
   counter-increment: h2;
-  content: counter(h1) "." counter(h2) ". ";
+  content: counter(h1) "." counter(h2) " - ";
 }
 
 h3.chapter::before {
   counter-increment: h3;
-  content: counter(h1) "." counter(h2) "." counter(h3) ". ";
+  content: counter(h1) "." counter(h2) "." counter(h3) " - ";
 }
 
 h4.chapter::before {
   counter-increment: h4;
-  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". ";
+  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " - ";
 }
 
 /* Increment and display figure counter */
@@ -147,9 +135,5 @@ figure figcaption:before {
 
 ul.toc a::after {
   /* content: leader(".") target-counter(attr(href), page); */
-  background: black;
-  width: 20px;
-  display: block;
-  height: 20px;
-  content: target-counter(attr(href), page);
+  // content: target-counter(attr(href), page);
 }

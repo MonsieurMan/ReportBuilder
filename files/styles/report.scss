@@ -1,25 +1,53 @@
+// This file is about layout and color
+$border: .25pt solid #099;
+$border-radius: 8px;
+
+$font-color: black;
+$footer-font-color: grey;
+$link-font-color: blue;
+
+$paragraph-indent: 16px;
+$list-padding: 32px;
+$font-family: "Open sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+
+
 body {
-  font-family: "Open sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-family: $font-family;
   line-height: 1.5;
   font-size: 11pt;
+}
+ul {
+  padding-left: $list-padding;
+}
+@page {
+  size: A4;
+  margin: 70pt 60pt;
+}
+
+@mixin bottomStyle {
+  margin-top: 10pt;
+  margin-bottom: 30pt;
+  border-top: $border;
+  font-family: $font-family;
+  font-size: 8pt;
+  font-weight: bold;
+  color: $footer-font-color;
 }
 
 h1 {
   line-height: 1.3;
+  border-bottom: $border;
+  break-before: always;
 }
-
-ul {
-  list-style-type: none;
-}
-
 a {
-  color: black;
+  color: blue;
   text-decoration: none;
 }
 
 p {
   text-align: justify;
-  text-indent: 40px;
+  text-align-last: auto;
+  text-indent: $paragraph-indent;
 }
 
 figure {
@@ -28,8 +56,8 @@ figure {
 }
 
 figure img {
-  border: solid 0.55px grey;
-  border-radius: 4px 32px;
+  border: $border;
+  border-radius: $border-radius;
   margin: auto;
   display: block;
 }
@@ -51,14 +79,20 @@ div.guardpage {
   height: 100%;
 }
 
-.tof li:nth-child(odd) {
-  background-color: #AAAAAA;
-}
-
-.tof li:nth-child(even) {
-  background-color: #888888;
-}
-
-.tof li a {
-  color: white;
+.tof,
+.toc {
+  list-style-type: none;
+  padding-left: 0;
+  border-radius: $border-radius;
+  a {
+    color: black;
+  }
+  li {
+    &:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
+    &:nth-child(even) {
+      // background-color: #c2c2c2;
+    }
+  }
 }

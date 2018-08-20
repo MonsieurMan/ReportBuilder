@@ -42,27 +42,27 @@ function generateToc(doc: Document): void {
       case 'H1': {
         h1++;
         h2 = h3 = h4 = 0;
-        const id = h1.toString() + '.';
+        const id = h1.toString();
         addIdAndCreateLi(id, element, toc, doc, 0);
         break;
       }
       case 'H2': {
         h2++;
         h3 = h4 = 0;
-        const id = h1.toString() + '.' + h2.toString() + '.';
+        const id = h1.toString() + '.' + h2.toString();
         addIdAndCreateLi(id, element, toc, doc, 1);
         break;
       }
       case 'H3': {
         h3++;
         h4 = 0;
-        const id = h1.toString() + '.' + h2.toString() + '.' + h3.toString() + '.';
+        const id = h1.toString() + '.' + h2.toString() + '.' + h3.toString();
         addIdAndCreateLi(id, element, toc, doc, 2);
         break;
       }
       case 'H4': {
         h4++;
-        const id = h1.toString() + '.' + h2.toString() + '.' + h3.toString() + '.' + h4.toString() + '.';
+        const id = h1.toString() + '.' + h2.toString() + '.' + h3.toString() + '.' + h4.toString();
         addIdAndCreateLi(id, element, toc, doc, 3);
         break;
       }
@@ -71,13 +71,13 @@ function generateToc(doc: Document): void {
   }
 }
 
-function addIdAndCreateLi(id: string, element: Element, toc: Element, doc: Document, tab: number) {
-  element.id = id;
+function addIdAndCreateLi(id: string, header: Element, toc: Element, doc: Document, tab: number) {
+  header.id = id;
   const li = doc.createElement('li');
   const a = doc.createElement('a');
   a.setAttribute('href', '#' + id);
-  a.style.paddingLeft = (tab * 20) + 'px';
-  const text = doc.createTextNode(id + ' ' + element.textContent);
+  a.style.paddingLeft = (8 + tab * 20) + 'px';
+  const text = doc.createTextNode(id + ' - ' + header.textContent);
   a.appendChild(text);
   li.appendChild(a);
   toc.appendChild(li);
