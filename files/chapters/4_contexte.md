@@ -65,7 +65,7 @@ Elle cherche encore sa place dans le reste des organisations qui constitue la SN
 
 ## Ma situation dans l'entreprise
 
-Pour pouvoir me situer dans cette grande entreprise, je vous propose de descendre la hiérarchie depuis le haut:
+Pour pouvoir me situer dans cette grande entreprise, je vous propose de descendre la hiérarchie depuis le sommet:
 
 ### SNCF Mobilités
 
@@ -85,22 +85,27 @@ Ce dispositif est répartit dans 4 entités distinctes:
 
 ### Technicentre Bourgogne Franche Comté
 
-Le **TBFC** se situe à Dijon, sur le site de Perrigny.  
+Le **TBFC** se situe est répartit sur quatres sites:
 
-Celui-ci à pour rôle la maintenance du parc des locomotives TER et FRET de la région.  
+- Le site de Perrigny, *le site principal ou je me situe*
+- Le site de Dijon ville
+- Le site de Gevrey
+- Le site de Besançon
+
+Le technicentre à pour rôle la maintenance du parc des locomotives et wagons TER et FRET de la région.  
 
 Il est dirigé par *Sylvain Miguet*, et est plus ou moins répartit selon les services suivants:
 
-- Pole Appui Production
-- STF BFC
-- Pole GEF
-- Pole QSE
-- Pole RH
-- Pole Amélioration continue
+- Appui Production
+- STF BFC, *(Supervisions techniques de flotte)*
+- GEF
+- QSE
+- RH *(Ressource humaines)*
+- Amélioration continue
   - Installation et outillages
   - Cellule Digitale
-- UO TER
-- UO LOC Wagon Station
+- UO TER *(Unité Opérationelle)*
+- UO LOC Wagon Station *(Unité Opérationelle)*
 
 ### Pole Amélioration Continue
 
@@ -108,10 +113,44 @@ Le pole amélioration continue à pour but, l'amélioration des processus du Tec
 
 Celui-ci est sous la direction de *Lionel Ramos* mon tuteur actuel.
 
-Il est donc divisé en deux pôles, installation et outillages, qui améliore l'environement de travail en mettant en place de nouveaux outils ou infrastructure, et la Cellule digitale.
+Il est donc divisé en deux pôles, installation et outillages, qui a pour mission l'amélioration de l'environement de travail par le biais de nouveaux outils ou infrastructure, et la Cellule digitale.
 
 ### Cellule Digitale
 
+#### Création
+
+Comme je le précisais plus tôt, l'informatique apporte de nouveaux défis mais aussi de nouvelles opportunitées:  
+C'est dans ce cadre que s'inscrit la cellule digitale. Cette initiative est relativement nouvelle, en effet l'informatique de proximité est loin d'être la règle actuellement à la SNCF.
+
+Depuis sa création, il y à un peu plus de quatres ans, elle à pour rôle le développement et la maintenance de nombreuses applications pour répondre au problèmatiques de l'amélioration continu des processus du technicentre.
+
+> Demander précision Alan, Lionel, Sylvain
+
+#### Composition
+
+Durant mon alternance, la cellule digitale a été composé du personnel suivant:
+
+- **Alan Morin**, Développeur titulaire
+- **Kevin Dos Santos**, Alternant Développeur *(jusqu'en juillet 2018)*
+- **Christophe Chuy**, Alternant Développeur *(jusqu'en novembre 2017)*
+- Moi même  
+
+#### Acteurs concernés
+
+Le travail de la cellule peut aussi bien concerner les unitées de production que les autres fonctions supports, cela varie selon les projets.  
+
+C'est dans ce contexte que j'ai pu travailler sur les projets que je présenterais dans la suite de ce rapport.
+
+## Contexte technique
+
+- Réseau  
+  - Proxy
+- Navigateur  
+- Applications Web  
+- Framework  
+- Outils  
+- Déploiement 
+  - Lyon  
 
 
 [1]: https://fr.wikipedia.org/wiki/Compagnie_des_chemins_de_fer_du_Nord
