@@ -7,7 +7,7 @@ $font-color: black;
 $footer-font-color: grey;
 $link-font-color: blue;
 
-$paragraph-indent: 16px;
+$paragraph-indent: 32px;
 $list-padding: 32px;
 $list-odd-background-color: #f5f5f5;
 
@@ -55,9 +55,12 @@ a {
 p {
   text-align: justify;
   text-align-last: auto;
-  text-indent: $paragraph-indent;
 }
-
+h1, h2, h3, h4, h5 {
+  +p {
+    text-indent: $paragraph-indent;
+  }
+}
 figure {
   width: 100%;
   text-align: center;

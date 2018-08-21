@@ -59,7 +59,7 @@ Le groupe est acteur dans de nombreuses nouvelles innovations, pour n'en citer q
 
 Bien que l'informatique soit présente depuis le début au service des voyageurs:
 
-![Site SNCF Minitel](../assets/sncf-minitel.jpg)
+![Site SNCF Minitel](./assets/sncf-minitel.jpg)
 
 Elle cherche encore sa place dans le reste des organisations qui constitue la SNCF, c'est le cas du pôle dont je fais partie.
 
@@ -139,18 +139,106 @@ Durant mon alternance, la cellule digitale a été composé du personnel suivant
 
 Le travail de la cellule peut aussi bien concerner les unitées de production que les autres fonctions supports, cela varie selon les projets.  
 
-C'est dans ce contexte que j'ai pu travailler sur les projets que je présenterais dans la suite de ce rapport.
-
 ## Contexte technique
 
-- Réseau  
-  - Proxy
-- Navigateur  
-- Applications Web  
-- Framework  
-- Outils  
-- Déploiement 
-  - Lyon  
+### Réseau, Active Directory, et serveur proxy
+
+La SNCF dispose d'un grand réseau intranet accessible seulement depuis l'intérieur ou par le biais de serveur proxys.  
+
+L'entiéreté du parc d'ordinateur de la SNCF fonctionne sont windows 7 et windows 10. La migration est en cours depuis un an déjà mais certaines contraintes logicielles et la quantité de matérielle à migrer ralentisse le processus.  
+
+Chaque Agent SNCF, Alternant, Stagiaire ainsi que certains prestataires de services disposent d'un compte SNCF, avec un CP *(identifiant)* et un mot de passe, le tout géré par un Active Directory Windows Server.
+
+Le proxy est un proxy NTLM, celui-ci régit tout le flux entrant et sortant vers internet.  
+
+En tant que développeur, nous devons reconfigure chaque nouveau logicielle pour l'utiliser.
+
+### Stack de développement
+
+La cellule digitale, développe essentiellement des applications web et web mobile, disponible sur l'intranet de l'entreprise, je me pencherai plus précisément sur les questions de déploiement par la suite.  
+
+Pour ce faire nous utilisons plusieurs technologies, dont:  
+
+#### Angular 2
+
+Framework javascript front-end qui permet de créer des Single Page Application par le biais de composant et bindings MVVM.
+
+#### AngularJS
+
+#### Ionic3
+
+#### Sprint boot 1.5
+
+#### Base de données
+
+Postgresql
+CouchDB
+PouchDB
+
+### Logiciels utilisées
+
+#### VSCode
+
+VSCode est un IDE Open Source léger développé par Microsoft, celui-ci vise principalement les environement front-end et back end Javascript et Typescript.  Mais grace à son modèle d'extensibilité et ses nombreux plugins, tends à devenir aussi complet que n'importe quelle IDE.  
+En plus d'être gratuit, il est très simple d'utilisation, demande peu de performance, et les extensions sont facile à créée.  
+
+J'en ai d'ailleurs créée une sur mon temps libre pour me permettre de refactor les composants Angular.
+
+#### PGAdmin
+
+PGadmin est un outil d'administration de base de données, nous nous en servons pour mettre à jour et effacé les données simplement en phase de développement.
+
+### Navigateur cible
+
+#### Firefox ESR *(desktop)*
+
+C'est la plateforme principale que nous visons et le navigateur recommandé aujourd'hui à la SNCF, il s'agit en fait d'un build custom de firefox déployé par une équipe de la Direction de la Sécurité à Lyon.
+
+#### Google Chrome *(desktop)*
+
+Depuis peu, il est possible d'installer google chrome sur les postes. C'est la dernière version à jour de Google Chrome, avec quelques paramètres de désactivés.  
+
+Malgrès nos nombreuses questions à ce sujet, je n'arrive pas à savoir dans quelle démarche cela peut s'inscrire, surtout au niveau sécurité en comparaisant au build custom de Firefox. Google Chrome n'étant pas Open Source, ormis dans sa version Chromium qui n'est pas celle que nous utilisons.  
+D'autant plus que le paramètre `Envoyer les rapport d'erreur et autre données` est activé et bloqué par défaut.
+
+#### Internet Explorer *(desktop)*
+
+Nous ne visons pas cette plateforme au sein de la cellule digitale. L'unique raison pour la quelle IE est encore utilisé est du certaines anciennes applications ne fonctionne que sous internet explorer.
+
+#### Safari *(ios)*
+
+Une partie de la flotte mobile de la SNCF utilisant des Iphone, safari est aussi un des navigateurs que nous ciblons.  
+
+Celui-ci étant basé sur le même moteur que chrome, blink, il nous est rare d'avoir des problèmes avec.
+
+#### Mobile Iron, Web@Work *(android)*
+
+Pour terminer, la plus grande partie de la flotte mobile de la SNCF fonctionne sous android, hors pour pouvoir accéder au proxy sous Android, la solution qui a était retenu est Mobile Iron.  
+
+En effet, les portables ne disposent pas d'un accés direct au réseau, il passent d'abord par le réseau internet mobile.  
+
+Or, Mobile Iron, qui est donc une surcouche logicielle du système Android, fournit plusieurs logiciel propriétaire dont, le navigateur Web@Work. Ce dernier est basé sur une ancienne version de chromium et modifie énormément de paramètres.  
+
+C'est une grande source de contraintes pour nous, la version de chromium n'étant pas à jour, beaucoup de nouvelles spécifications CSS et HTML ne fonctionnent pas. Le navigateur ne dispose d'ailleurs d'aucune documentation quant au fonctionnalités supporté ou modifié.  
+
+### Déploiement des applications
+
+Le déploiement de nos applications et géré par DDSIM, La direction des services informatiques du matériel. Situé à Lyon elle nous fournit le déploiement de nos applications, base de données et serveur "as a service".
+
+Ce sont aussi eux qui gère la réplication et la stabilité des base de données.
+
+Ce service proposent les environements suivant :
+
+#### Développement
+
+L'environement de développement, il nous est fournit pour pouvoir prototyper et développer nos applications uniquement.
+
+Le matériel utilisé est moins robuste et stable que pour les autres environement, en effet, en cas de panne, il n'affecte que les développeurs, cela permet de réduire les coûts lié à l'infrastructure.
+
+####
+- Recette, test utilisateurs restreint (5/10) utilisateurs max
+- Pilote, environement de pré-production, l'outil n'est pas encore stable mais tant à l'être. Il peut encore être utilisé conjointement  aux anciennes procédures, si existante.
+- Production, l'application est déployé et utilisé remplaçant les anciennes procédures si existantes.
 
 
 [1]: https://fr.wikipedia.org/wiki/Compagnie_des_chemins_de_fer_du_Nord
