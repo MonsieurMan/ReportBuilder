@@ -34,7 +34,7 @@ Le rapport de la Cour des comptes de 2007 relève que la séparation entre gesti
 
 ### Réunification et création des trois EPIC
 
-Suite à beaucoup de problèmes liées à la séparation des deux entités, le Sénat et l'Assemblée nationale constitue une nouvelle réforme en SNCF. Celle-ci prévoit la réunification de la SNCF et RFF. Elle prévoit aussi une réorganisation de la SNCF en trois EPIC:
+Suite à de nombreux de problèmes liées à la séparation des deux entités, le Sénat et l'Assemblée nationale constitue une nouvelle réforme en SNCF. Celle-ci prévoit la réunification de la SNCF et RFF. Elle prévoit aussi une réorganisation de la SNCF en trois EPIC:
 
 - **SNCF**, l'EPIC de tête, la gouvernance du groupe.
 - **SNCF Réseau**, gestionnaire de l'infrastructure.
@@ -42,9 +42,7 @@ Suite à beaucoup de problèmes liées à la séparation des deux entités, le S
 
 ![Trois EPIC](./assets/sncf-epic.png)
 
-## La SNCF aujourd'hui
-
-### Chiffres clés
+### La SNCF aujourd'hui
 
 En 2016, les trois EPIC emploient **146,623 salariés** et compte **260,000 collaborateurs**. Avec un chiffre d'affaires de **31,4 Md€** donc **33%** réalisés à l'international, le groupe transporte **13,5 millions** de voyageurs chaque jour, il est présent dans **120** pays.
 
@@ -53,11 +51,68 @@ C'est lui qui exploite par exemple le réseau Divia.
 
 ### L'ère du digital
 
-L'arrivé et la croissance exponentielle de l'informatique et du digital confronte aujourd'hui le groupe à de nouvelles problématiques.
-Le groupe est aussi acteur de nombreuses nouvelles innovations, pour n'en citer que quelques unes:
+L'arrivé et la croissance exponentielle de l'informatique et du digital confronte aujourd'hui le groupe à de nouvelles problématiques mais aussi de nouvelles opportunités.
+Le groupe est acteur dans de nombreuses nouvelles innovations, pour n'en citer que quelques unes:
 
-- [Investissements et exploitation](https://www.usine-digitale.fr/article/keolis-et-valeo-misent-sur-la-navette-autonome-navya-leve-30-millions-d-euros.N449887) conjointement avec Navya pour deux navette 100% autonome à Lyon depuis 2016 et Los Angeles depuis cette année.
+- [Investissements et exploitation](https://www.usine-digitale.fr/article/keolis-et-valeo-misent-sur-la-navette-autonome-navya-leve-30-millions-d-euros.N449887) conjointement avec Navya de deux navette 100% autonome à Lyon depuis 2016 et Los Angeles depuis cette année.
 - 2017, [création d'ALTAMETRIS](https://www.sncf-reseau.fr/fr/actualite/institutionnel/lancement-de-la-filiale-drones-sncf-reseau-altametris), filiale de SNCF Réseau, traitements de données sur le réseau acquises par drones et robots.
+
+Bien que l'informatique soit présente depuis le début au service des voyageurs:
+
+![Site SNCF Minitel](../assets/sncf-minitel.jpg)
+
+Elle cherche encore sa place dans le reste des organisations qui constitue la SNCF, c'est le cas du pôle dont je fais partie.
+
+## Ma situation dans l'entreprise
+
+Pour pouvoir me situer dans cette grande entreprise, je vous propose de descendre la hiérarchie depuis le haut:
+
+### SNCF Mobilités
+
+Comme rapporté précédemment, c'est l'un des trois grands EPIC qui compose la SNCF.
+Cette entité est chargé de l'exploitation des trains de voyageurs et de marchandises en France.  
+En 2015 elle emploie près des 2/3 des effectifs de la SNCF.
+
+### SNCF Matériel
+
+Cette entité à pour charge la maintenance du matériels roulants, ce qui représente près de 17,000 machines.  
+Ce dispositif est répartit dans 4 entités distinctes:
+
+- La direction du matériel
+- Les entités d'ingénierie
+- Les entités support (Technicampus et CLI)
+- Les 38 technicentre (28 de maintenance et 10 industriels)
+
+### Technicentre Bourgogne Franche Comté
+
+Le **TBFC** se situe à Dijon, sur le site de Perrigny.  
+
+Celui-ci à pour rôle la maintenance du parc des locomotives TER et FRET de la région.  
+
+Il est dirigé par *Sylvain Miguet*, et est plus ou moins répartit selon les services suivants:
+
+- Pole Appui Production
+- STF BFC
+- Pole GEF
+- Pole QSE
+- Pole RH
+- Pole Amélioration continue
+  - Installation et outillages
+  - Cellule Digitale
+- UO TER
+- UO LOC Wagon Station
+
+### Pole Amélioration Continue
+
+Le pole amélioration continue à pour but, l'amélioration des processus du Technicentre.  
+
+Celui-ci est sous la direction de *Lionel Ramos* mon tuteur actuel.
+
+Il est donc divisé en deux pôles, installation et outillages, qui améliore l'environement de travail en mettant en place de nouveaux outils ou infrastructure, et la Cellule digitale.
+
+### Cellule Digitale
+
+
 
 [1]: https://fr.wikipedia.org/wiki/Compagnie_des_chemins_de_fer_du_Nord
 [2]: https://fr.wikipedia.org/wiki/Compagnie_des_chemins_de_fer_de_l%27Est

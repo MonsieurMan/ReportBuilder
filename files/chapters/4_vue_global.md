@@ -2,7 +2,7 @@
 
 ## Ouitalk - Avril 2017 / Novembre 2017
 
-Ouitalk est une idée né d'un hackaton que j'ai eu à développé. Cela consistait en la mise au
+Ouitalk est une idée né d'un hackathon que j'ai eu à développé. Cela consistait en la mise au
 point d'un prototype de recherche dont je présenterai les tenants et aboutissant dans son
 chapitre détaillé.
 J'ai donc développé une application web mobile (client en Ionic3, serveur NodeJs + MongoDB)
@@ -20,7 +20,6 @@ J'ai eu pour tâche d'y ajouter un nouveau module en fin novembre pour début f�
 ## Form'action - Février 2018 / Aujourd'hui
 
 Form'action a pour but de digitaliser la gestion des demandes de formation au sein de l'établissement. 
-
 
 ## IP² - TODO: date / Aujourd'hui
 
