@@ -155,25 +155,65 @@ En tant que développeur, nous devons reconfigure chaque nouveau logicielle pour
 
 ### Stack de développement
 
-La cellule digitale, développe essentiellement des applications web et web mobile, disponible sur l'intranet de l'entreprise, je me pencherai plus précisément sur les questions de déploiement par la suite.  
+La cellule digitale, développe essentiellement des applications web et web mobile, disponible sur l'intranet de l'entreprise, je me pencherai plus précisément sur la questions du déploiement par la suite.  
 
-Pour ce faire nous utilisons plusieurs technologies, dont:  
+> En écrivant ce rapport, je me suis rendu compte que toutes les technologies que nous utilisons pour développer sont open source.
+
+Voici les technologies que j'ai été amené à manipuler durant cette année:  
 
 #### Angular 2
 
-Framework javascript front-end qui permet de créer des Single Page Application par le biais de composant et bindings MVVM.
+Framework javascript front-end qui permet de créer des Single Page Application par le biais de composant et bindings MVVM.  
+
+**MVVM**, *Model View ViewModel*, est en fait un dérivé du modèle MVC le controleur est simplement remplacé par le ViewModel, la différence entre ces deux modèles réside surtout dans une chose, le 2 way data binding, c'est à dire que les changement effectué dans la View sont reflétté directement dans la ViewModel est vice-versa.
+
+Dans le cas d'angular, un composant est en fait composé de:
+
+- Une classe, *Typescript*, ViewModel, la logique de présentation
+- Un template et une feuilles de style, *HTML + SCSS/CSS*, la vue
 
 #### AngularJS
 
+AngularJS est une précédente version du framework, bien que présentant des concepts similaires, ils ne fonctionnent pas du tout pareil, ils utilise même un langage différent.
+
+> Beaucoup considère que google à fait une erreur en gardant le même nom pour ces deux projets qui au final ne sont pas les mêmes.
+
+Nous ne développons plus de nouvelles applications avec AngularJS mais il nous reste d'anciennes applications en maintenances.
+
 #### Ionic3
 
-#### Sprint boot 1.5
+Ionic est un framework construit autour d'angular visant spécifiquement les plateformes mobiles, il permet notamment via des plugins de crée des applications installables accédant directement au API natives.
+
+Nous n'avons pas d'example en production, nous nous en sommes servis principalement pour du prototypage.
+
+#### Spring boot 1.5
+
+Spring est un framework backend Java. Spring boot est une surcouche permettant de créée des projets Spring avec moins de configuration.
 
 #### Base de données
 
-Postgresql
-CouchDB
-PouchDB
+Pour ce qui est des bases de données nous nous servons des technologies suivantes:  
+
+- **Postgresql**, base de données SQL
+- **CouchDB**, base de données NOSQL accessible via une API HTTP
+- **PouchDB**, module javascript frontend offrant de nombreux outils pour l'utilisation d'une base CouchDB
+
+#### Node.js
+
+Node.js est un *runtime environement* pour javascript, c'est à dire, qu'il sert à faire éxécuter du code Javascript par une machine.  
+
+Contrairement à ce que l'on pourrait croire, ils ne sert pas uniquement à développer des serveurs, il est présent dans tout l'écosystème javascript.  
+
+Dans notre cas, nous nous en servons tout les jours pour Angular et autres.
+
+### Langage
+
+- **Javascript**, il n'est plus nécessaire de le présenté, c'est le langage interprété par tout les navigateurs depuis bien longtemps.
+- **Typescript**, est un langage développé par Microsoft qui compile vers javascript, celui-ci rajoute les notions de typages dynamiques.
+- **HTML**, pour les templates angular et autres
+- **CSS**, pour les feuilles de styles
+- **SCSS**, langage qui compile vers CSS, il permet de rajouter des fonctions, variables, etc...
+- **Java**, dans le cadre de spring.
 
 ### Logiciels utilisées
 
@@ -198,8 +238,7 @@ C'est la plateforme principale que nous visons et le navigateur recommandé aujo
 
 Depuis peu, il est possible d'installer google chrome sur les postes. C'est la dernière version à jour de Google Chrome, avec quelques paramètres de désactivés.  
 
-Malgrès nos nombreuses questions à ce sujet, je n'arrive pas à savoir dans quelle démarche cela peut s'inscrire, surtout au niveau sécurité en comparaisant au build custom de Firefox. Google Chrome n'étant pas Open Source, ormis dans sa version Chromium qui n'est pas celle que nous utilisons.  
-D'autant plus que le paramètre `Envoyer les rapport d'erreur et autre données` est activé et bloqué par défaut.
+Malgrès nos nombreuses questions à ce sujet, nous ne savons pas dans quelle démarche cela s'inscrit, surtout au niveau sécurité en comparaison au build custom de Firefox. Google Chrome n'étant pas Open Source, ormis dans sa version Chromium qui n'est pas celle que nous utilisons.  
 
 #### Internet Explorer *(desktop)*
 
@@ -235,10 +274,22 @@ L'environement de développement, il nous est fournit pour pouvoir prototyper et
 
 Le matériel utilisé est moins robuste et stable que pour les autres environement, en effet, en cas de panne, il n'affecte que les développeurs, cela permet de réduire les coûts lié à l'infrastructure.
 
-####
-- Recette, test utilisateurs restreint (5/10) utilisateurs max
-- Pilote, environement de pré-production, l'outil n'est pas encore stable mais tant à l'être. Il peut encore être utilisé conjointement  aux anciennes procédures, si existante.
-- Production, l'application est déployé et utilisé remplaçant les anciennes procédures si existantes.
+#### Recette
+
+Cette environement est dédié au test utilisateurs restreint, 5/10 utilisateurs maximum.
+
+Le matériel est, comme pour l'environement de développement, moins robuste que le reste.
+
+#### Pilote
+
+C'est l'environement de pré-production. A ce moment, sa stabilité n'est pas encore garantie, les serveurs supporte cependant une charge supérieur que sur les précédents environements et sont plus stable.  
+Dans cette environement, il est possible que tout les utilisateurs supposés se servent de l'outil. Il est cependant de mise que s'il remplace d'anciennes procédures, celle-ci soit toujours effectué conjointement en cas de panne ou d'erreur sur l'application
+
+#### Production
+
+Enfin, l'environement de production correspond à une phase du produit ou les anciennes procédures ne sont plus utilisées, le produit est censé être stable.  
+
+En enviroment de production, les bases de données sont répliqués pour résister en cas de défection matériel, les serveurs supportes aussi une charge plus conséquente de requête.
 
 
 [1]: https://fr.wikipedia.org/wiki/Compagnie_des_chemins_de_fer_du_Nord

@@ -1,12 +1,12 @@
 # Remerciements
 
-**Fabien Chanoit**
-**Sylvain Miguet**
-**Lionel Ramos**
+**Fabien Chanoit**  
+**Sylvain Miguet**  
+**Lionel Ramos**  
 
-**Alan Morin**
-**Kevin Dos Santos**
-**Christophe Chuy**
+**Alan Morin**  
+**Kevin Dos Santos**  
+**Christophe Chuy**  
 
-**Edouard Gnin..** //TODO: Retrouver nom
-**Marinette Savonnet**
+**Edouard Gnininvi**  
+**Marinette Savonnet**  
