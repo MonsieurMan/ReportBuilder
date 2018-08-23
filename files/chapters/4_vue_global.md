@@ -1,6 +1,6 @@
 # Vue global du travail réalisé  
 
-La suite des chapitres présentent les différents projets sur lesquelles j'ai travaillé, ils sont arrangés, dans l'ordre du possible, par ordre chronologique.
+La suite des chapitres présentent les différents projets sur lesquelles j'ai travaillé, ils sont arrangés, dans la mesure du possible, par ordre chronologique.
 
 ## Ouitalk - Avril 2017 / Novembre 2017
 
@@ -10,19 +10,21 @@ Ouitalk est une idée né d'un hackathon que j'ai eu à développé. Cela consis
 
 ## Zero Minute - Décembre 2017 / Aujourd'hui
 
-Zéro minute est un projet qui a été développé au technicentre il y a deux années déjà, celui-ci consiste simplement en une application web mobile dans laquelle les agents d'escale en gare (de Dijon actuellement) déclarent les départs des trains, (retard avec cause, à l'heure, etc..) afin d'avoir des statistiques sur la gare et les causes récurrentes de retard.  
+Zéro minute est un projet qui a été développé au technicentre il y a deux années déjà dans laquelle les agents d'escale en gare *(de Dijon actuellement)* déclarent les départs des trains, *(si retard avec cause, à l'heure, etc..)* afin d'avoir des statistiques sur les causes récurrentes de retard par gare.  
 
 J'ai eu pour tâche d'y ajouter un nouveau module.
 
 ## Form'action - Février 2018 / Aujourd'hui
 
-Form'action est un projet qui a pour but de digitaliser la gestion des demandes de formation au sein de l'établissement.
+Form'action est le résultat de la digitalisation de la gestion des sessions et des demandes de formation au sein de l'établissement.
 
-## Goodloc - TODO: date / Aujourd'hui
+## Goodloc - Avril 2018 / Aujourd'hui
 
-## IP² - TODO: date / Aujourd'hui
+Goodloc, initialement Fiab'Engin a permit de rendre plus robuste le processus de contrôle des machines de la série BB26000.
 
-IP² est une application générant des statistiques pour la planification de la production afin de les rendre automatiques et plus robuste.
+## IP² - Juillet 2018 / Aujourd'hui
+
+IP² est une application générant des statistiques pour la planification de la production, elle permet non seulement de rendre le processus automatique mais de le rendre plus robuste.
 
 ## Intégration du design système SNCF - Juillet 2018 - Futur
 
