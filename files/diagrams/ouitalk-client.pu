@@ -2,8 +2,8 @@
 
 left to right direction
 skinparam packageStyle rectangle
-
 skinparam monochrome true
+skinparam shadowing false
 
 :Controleur: as CTRL
 :Voyageur: as VOY

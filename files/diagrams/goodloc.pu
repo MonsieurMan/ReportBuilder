@@ -3,6 +3,7 @@
 left to right direction
 skinparam packageStyle rectangle
 skinparam monochrome true
+skinparam shadowing false
 
 :Visiteur: as VIS
 :Utilisateur: as USR
@@ -11,7 +12,7 @@ skinparam monochrome true
 rectangle "Goodloc" {
     (Demande de compte utilisateur) as demande
     
-    VIS <|-up- USR
+    VIS <|-right- USR
     
     VIS -- demande
     demande -- ADM
