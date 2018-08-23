@@ -28,14 +28,14 @@ C'est donc dans l'optique d'avoir une meilleur visibilité de l'opinion client e
 
 Voici le diagramme des cas d'utilisation, *simplifié*, de l'application mobile que j'ai développé.
 
-![Ouitalk - Application mobile](../assets/ouitalk-user-use-case.svg)  
+![Ouitalk - Application mobile](../assets/usecase/ouitalk-client.png)  
 
 Et celui du back office, qui, lui n'as pas été developpé car le projet fut suspendu avant.
 
-![Ouitalk - Back office](../assets/ouitalk-admin-use-case.svg)  
+![Ouitalk - Back office](../assets/usecase/ouitalk-admin.png)  
 
 Ci-dessous une capture d'écran de l'application vu par un client, il s'agit de la liste des trains au départ de la gare de joigny.  
 
-![Ouitalk - Liste départs gare](../assets/ouitalk.png)
+![Ouitalk - Liste départs gare](../assets/screenshots/ouitalk.png)
 
 <!-- TODO: parcour utilisateur -->

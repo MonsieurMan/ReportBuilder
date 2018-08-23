@@ -1,4 +1,5 @@
 # Goodloc
 
 ![BB26000](../assets/bb26000.jpg)
-![GoodLoc - Page unique](../assets/goodloc.png)
+![Goodloc - Use case](../assets/usecase/goodloc.png)
+![GoodLoc - Page unique](../assets/screenshots/goodloc.png)

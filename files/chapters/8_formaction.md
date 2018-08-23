@@ -1,3 +1,3 @@
 # Formaction
 
-![Formaction - menu principale](../assets/formaction.png)
+![Formaction - menu principale](../assets/screenshots/formaction.png)
