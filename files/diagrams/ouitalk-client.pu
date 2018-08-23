@@ -1,0 +1,29 @@
+@startuml ouitalk-client-usecase
+
+left to right direction
+skinparam packageStyle rectangle
+
+skinparam monochrome true
+
+:Controleur: as CTRL
+:Voyageur: as VOY
+:Autorité Organisatrce: as OA
+
+rectangle "Ouitalk Client" {
+    (Discuter avec les autres usagers du train) as discUs
+    (Inscription) as insc
+    (Consulter avis) as vAvis
+    (Poster avis) as pAvis
+    (Demander remboursement) as demRemb
+    
+    CTRL -- discUs
+
+    VOY -- discUs
+    VOY -- insc
+    VOY -- vAvis
+    VOY -- pAvis
+    VOY -- demRemb
+
+    demRemb -- OA
+}
+@enduml

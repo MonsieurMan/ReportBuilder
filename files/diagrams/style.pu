@@ -1,0 +1,5 @@
+' style
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome true
+skinparam shadowing false

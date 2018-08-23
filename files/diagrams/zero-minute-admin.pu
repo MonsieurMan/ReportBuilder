@@ -1,0 +1,19 @@
+@startuml zerominute-usecase
+
+left to right direction
+skinparam packageStyle rectangle
+
+skinparam monochrome true
+
+:Agent Escale: as ASC <<Admin>>
+
+rectangle "ZeroMinute Admin" {
+    (Gestion agent gare) as gest
+    gest .down.> (Modifier rôle agent) : include
+    gest .down.> (Ajouter / Supprimer agent) : include
+    
+    ASC -- gest
+    ASC -- (Modifier entité et cause retard)
+    ASC -- (Modifier mailing list)
+}
+@enduml

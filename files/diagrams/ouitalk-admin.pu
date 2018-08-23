@@ -1,0 +1,18 @@
+@startuml ouitalk-admin-usecase
+
+left to right direction
+skinparam packageStyle rectangle
+
+skinparam monochrome true
+
+:Modérateur: as MOD
+:Autorité Organisatrce: as OA
+
+rectangle "Ouitalk Admin" {
+    MOD -- (Modérer commentaire) 
+    
+    OA -- (Consulter statistiques par ligne / train)
+    OA -- (Afficher un bandeau annonce pour un train)
+    OA -- (Gestion demande remboursement)
+}
+@enduml
