@@ -9,8 +9,8 @@ skinparam shadowing false
 
 rectangle "ZeroMinute Admin" {
     (Gestion agent gare) as gest
-    gest .down.> (Modifier rôle agent) : include
-    gest .down.> (Ajouter / Supprimer agent) : include
+    gest <.down. (Modifier rôle agent) : include
+    gest <.down. (Ajouter / Supprimer agent) : include
     
     ASC -- gest
     ASC -- (Modifier entité et cause retard)

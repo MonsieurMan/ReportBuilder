@@ -6,20 +6,13 @@ skinparam monochrome true
 skinparam shadowing false
 
 :Agent d'escale: as ASC
-:Agent de manoeuvre: as AM
-:COP: as COP
 
-rectangle "ZeroMinute Client" {
+rectangle "Zero Minute - Declaration" {
     (Voir liste des départs à venir) as vListDep
     (Voir statistiques déclaration) as vStatDec
-    (Voir historique anticipation) as vHistAnt 
-    (Créer une anticipation retard) as cAnt
-    (Modifier une anticipation) as mAnt
     (Déclarer un départ) as cDec
     (Voir historique déclaration) as vHistDec
     
-    COP -- vHistAnt
-    AM -- cAnt
     ASC -- vHistDec
     ASC -- vStatDec
     ASC -- vListDep
@@ -27,8 +20,5 @@ rectangle "ZeroMinute Client" {
     vHistDec <.. (Modifier informations déclaration) : include
     vHistDec <.. (Voir historique modification) : include
     vListDep <.. cDec : include
-    cAnt <.. mAnt : include
-    vHistAnt <.. mAnt : include
-    vHistAnt <.. (Prendre en compte un anticipation) : include
 }
 @enduml

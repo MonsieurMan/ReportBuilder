@@ -1,0 +1,23 @@
+@startuml zerominute-usecase
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome true
+skinparam shadowing false
+
+:Agent de manoeuvre: as AM
+:COP: as COP
+
+rectangle "Zero minute - Anticipation" {
+    (Voir historique anticipation) as vHistAnt
+    (Créer une anticipation retard) as cAnt
+    (Modifier une anticipation) as mAnt
+
+    COP -- vHistAnt
+    AM -- cAnt
+    
+    cAnt <.. mAnt : include
+    vHistAnt <.. mAnt : include
+    vHistAnt <.. (Prendre en compte un anticipation) : include
+}
+
