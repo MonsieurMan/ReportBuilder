@@ -1,3 +1,3 @@
 # Design système SNCF
 
-![Design métier - example navigation](../assets/screenshots/design-metier.png)
+![Design métier - example navigation](./assets/design-metier.png)

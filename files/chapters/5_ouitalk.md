@@ -34,7 +34,7 @@ L'objectif étant de développé un prototype le plus rapidement possible, et n'
 
 Voici le diagramme des cas d'utilisation, *simplifié*, de l'application mobile que j'ai donc développé.
 
-![Ouitalk - Application mobile](../assets/usecase/ouitalk-client.png)  
+![Ouitalk - Application mobile](./assets/usecase/ouitalk-client.png)  
 
 L'application contient en réalité plus de fonctionnalité que je ne détaillerai pas exhaustivement dans ce rapport sachant qu'elle découle de ces fonctionnalités principales.
 
@@ -47,7 +47,7 @@ Un parcours type de l'application:
 
 Ci-dessous une capture d'écran de l'application vu par un client.
 
-![Ouitalk - Liste des trains au départs de Joigny](../assets/screenshots/ouitalk.png)
+![Ouitalk - Liste des trains au départs de Joigny](./assets/screenshots/ouitalk.png)
 
 ### Partie admin
 
@@ -55,7 +55,7 @@ De plus, une partie de supervision de l'application a été imaginé, elle aurai
 
 Dans l'idée, il s'agissait de donner à la région, un indicateur de santé sur ses lignes en appliquant le résultat des notes des avis sur une carte, de permettre d'afficher un bandeau d'annonce par train et enfin la gestion des demandes de remboursements.
 
-![Ouitalk - Back office](../assets/usecase/ouitalk-admin.png)  
+![Ouitalk - Back office](./assets/usecase/ouitalk-admin.png)  
 
 ## Réunion du 26/10/18
 
@@ -73,7 +73,7 @@ Des échanges par mail on continué à ce sujet par la suite mais rien ne fut co
 
 Pour avoir une vision plus globale du travail que j'ai réalisé, voici un diagramme de l'architecture du projet à la fin.
 
-![Ouitalk - Architecture](../assets/ouitalk-architecture.png)
+![Ouitalk - Architecture](./assets/ouitalk-architecture.png)
 
 Tout ce que vous pouvez voir sur ce diagrame était hébergé sur un serveur virtuel chez OVH, ormis gitlab qui à sa propre infrastructure.
 
@@ -87,11 +87,11 @@ Tout simplement, j'ai configuré gitlab, pour envoyer une requète http à chaqu
 
 ### Déploiement automatique
 
-Assez rapidement, je me suis rendu compte que re-déployer à la main à chaque fois que je faisais un changement était répétitif et me prennait trop de temps, surtout du fait que je travaillais seul sur le projet.  
+![Ouitalk - Application mobile](./assets/ouitalk-user-use-case.svg)  
 
 J'ai donc décidé d'en automatiser le processus. Par la création d'un serveur de déploiement automatique qui fonctionnait de la manière suivante.
 
-Chaque projet, serveur comme client, disposais d'un script `install.sh` à la racine qui contenait les instructions d'installation de celui-ci.
+![Ouitalk - Back office](./assets/ouitalk-admin-use-case.svg)  
 
 Comme je l'ai dit précédemment, j'ai configurer gitlab pour envoyer une requête à chaque changement, la requête est ensuite réceptionner par le serveur de déploiement automatique qui sait qu'il faut mettre à jour le projet pour lequelle il à reçu une requête. La mise à jour se faisant comme suit.
 
@@ -100,3 +100,6 @@ Comme je l'ai dit précédemment, j'ai configurer gitlab pour envoyer une requê
 - arrêt de l'ancienne version
 - lancement de la nouvelle version
 
+![Ouitalk - Liste départs gare](./assets/ouitalk.png)
+
+<!-- TODO: parcour utilisateur -->

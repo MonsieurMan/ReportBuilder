@@ -1,6 +1,6 @@
 // This file is about layout and color
-$border: .25pt solid #099;
-$border-radius: 8px;
+$border: .5pt solid #099;
+$border-radius: 4pt;
 
 $font-family: "Open sans", "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $font-color: black;
@@ -62,15 +62,17 @@ h1, h2, h3, h4, h5 {
   }
 }
 figure {
-  width: 100%;
   text-align: center;
 }
 
 figure img {
   border: $border;
+  border-style: dashed;
   border-radius: $border-radius;
-  margin: auto;
   display: block;
+  padding: 8px;
+  margin: auto;
+  max-width: 100%;
 }
 
 figure figcaption {
