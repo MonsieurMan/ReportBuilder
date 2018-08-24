@@ -75,7 +75,33 @@ Pour avoir une vision plus globale du travail que j'ai réalisé, voici un diagr
 
 ![Ouitalk - Architecture](./assets/ouitalk-architecture.png)
 
+> **ARC**, Application de Remonté de Commentaire, est le nom temporaire que j'avais donné au projet avant que Fabien trouve *Ouitalk*.
+
 Tout ce que vous pouvez voir sur ce diagrame était hébergé sur un serveur virtuel chez OVH, ormis gitlab qui à sa propre infrastructure.
+
+Les serveur, `auto-deploy`, `server`, `overseer-server`, `auth`, sont tous des serveur node.js que j'ai programmé en typescript.
+
+Le serveur principale `arc-server` utilisait une base de données mongodb et fournissait une API REST et WebSocket pour accéder au données. C'est le serveur qu'utilisait le client mobile.
+
+Le troisième serveur, `arc-overseer-server`, lui utilisait l'API REST du serveur principale pour proposer les fonctionnalités de la partie admin back office.
+
+### Proxy Nginx
+
+Un programme nodejs par défaut n'est pas accessible via le réseau, il faut pour cela mettre en place un reverse-proxy, dans mon cas, j'ai choisi nginx. Comme vous pouvez le voir sur le diagramme, chaque serveur est sur une adresse IP local différente, `127.0.0.*`. Grace à des fichiers de configuration simple, nginx permet de rediriger les requêtes sur le serveur physique *(machine virtuelle OVH)* vers le bon serveur, principale ou overseer.  
+
+Il m'as aussi permit dans le cas des deux clients, de servir les fichiers statique de ceux-ci en mappant l'adresse `ouitalk.xyz` et `ouitalk.xyz/overseer` sur les fichiers correspondant.
+
+En plus de ça, nginx propose d'autre fonctionnalité, comme le load balancing et la mise en cache des requêtes. Dans mon cas, le load balancing n'était pas intéressant n'ayant jamais eu plus de 5 personnes utilisant l'application en même temps. Cependant j'ai activer la mise en cache des requêtes qui permait un gain de performance de manière trivial.
+
+### Client mobile
+
+Le client principale, utilisait donc le framework Ionic, construit par dessus angular. Il utilisait l'API REST pour la majorité des données de l'application.
+
+Le chat cependant, pour pouvoir fonctionner en temps réel, utilisait les Web Socket.
+
+### Client back office
+
+Le back office, que j'ai tout juste commencé, utilisait lui Angular directement étant donné qu'il n'avait pas à fonctionner sous mobile. Il fonctionnait de la même mannière que l'autre client.
 
 ### Versionnage
 
@@ -87,19 +113,15 @@ Tout simplement, j'ai configuré gitlab, pour envoyer une requète http à chaqu
 
 ### Déploiement automatique
 
-![Ouitalk - Application mobile](./assets/ouitalk-user-use-case.svg)  
+Assez rapidement, je me suis rendu compte que re-déployer à la main à chaque fois que je faisais un changement était répétitif et me prennait trop de temps, surtout du fait que je travaillais seul sur le projet.  
 
 J'ai donc décidé d'en automatiser le processus. Par la création d'un serveur de déploiement automatique qui fonctionnait de la manière suivante.
 
-![Ouitalk - Back office](./assets/ouitalk-admin-use-case.svg)  
+Chaque projet, serveur comme client, disposais d'un script `install.sh` à la racine qui contenait les instructions d'installation de celui-ci.
 
-Comme je l'ai dit précédemment, j'ai configurer gitlab pour envoyer une requête à chaque changement, la requête est ensuite réceptionner par le serveur de déploiement automatique qui sait qu'il faut mettre à jour le projet pour lequelle il à reçu une requête. La mise à jour se faisant comme suit.
+Comme je l'ai dit précédemment, j'ai configurer gitlab pour envoyer une requête à chaque changement, la requête est ensuite réceptionner par le serveur de déploiement automatique qui sait qu'il faut lancer cette procédure pour le projet correspondant:
 
 - clonage du code source disponible sur gitlab
 - lancement du script `install.sh`
 - arrêt de l'ancienne version
 - lancement de la nouvelle version
-
-![Ouitalk - Liste départs gare](./assets/ouitalk.png)
-
-<!-- TODO: parcour utilisateur -->
