@@ -12,18 +12,22 @@ skinparam shadowing false
 rectangle "Ouitalk Client" {
     (Discuter avec les autres usagers du train) as discUs
     (Inscription) as insc
+    (Rechercher gare) as recGare
+    (Voir départs en fonction horaires) as consDépart
     (Consulter avis) as vAvis
     (Poster avis) as pAvis
     (Demander remboursement) as demRemb
     
-    CTRL -- discUs
-
-    VOY -- discUs
-    VOY -- insc
-    VOY -- vAvis
-    VOY -- pAvis
     VOY -- demRemb
-
-    demRemb -- OA
+    demRemb ---- OA
+    
+    VOY -- recGare
+    recGare <.. consDépart : include
+    consDépart <. vAvis : include
+    consDépart <.left. pAvis : include
+    VOY -- insc
+    
+    VOY -- discUs
+    CTRL -- discUs
 }
 @enduml
